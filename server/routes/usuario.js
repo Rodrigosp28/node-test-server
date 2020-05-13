@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const Usuario = require('../models/usuario');
-const {verificaToken,verificaAdminRol} = require('../middlewares/autenticacion')
+const {verificaToken,verificaAdminRol} = require('../middlewares/autenticacion');
 const app = express();
 
 
@@ -69,9 +69,9 @@ app.post('/usuario',[verificaToken,verificaAdminRol],(req, res) => {
     res.json( {
       ok:true,
       usuario: usuarioDB
-    })
+    });
 
-  })
+  });
 
 });
 
